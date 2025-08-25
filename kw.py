@@ -36,6 +36,13 @@ keywords = [
 ]
 
 # Fetch Data Button
+# User input for keywords
+keywords_input = st.text_area("Enter keywords (comma separated):", 
+                              "Reddit Update, AI Tools 2025, Investing for Beginners")
+
+# Convert into list
+keywords = [kw.strip() for kw in keywords_input.split(",") if kw.strip()]
+
 if st.button("Fetch Data"):
     try:
         # Calculate date range
